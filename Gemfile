@@ -9,6 +9,9 @@ gem 'sqlite3'
 # Adding login capabilities
 gem 'devise'
 
+# adding form formatting
+gem 'simple_form'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

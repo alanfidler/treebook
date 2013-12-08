@@ -1,17 +1,41 @@
-<h2>Sign in</h2>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+<div class="row">
+	<div class="col-md-4">
+		
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+			<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "well"}) do |f| %>
+			<div class="form-group">
+				<fieldset>
+					<legend>Log in!</legend>
+					<%= f.input :email %>
+					<%= f.input :password %>
+				
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+					<% if devise_mapping.rememberable? -%>
+					    <%= f.input :remember_me, as: :boolean %> 
+					<% end -%>
 
-<%= render "devise/shared/links" %>
+					<button type="submit" class="btn btn-primary">Sign in</button>
+				</fieldset>
+				<% end %>
+			</div>
+			<%= render "devise/shared/links" %>
+		
+
+	</div>
+
+	<div class="col-md-8">
+
+		<div class="bs-callout bs-callout-info"><h4>Signing in is easy and secure.</h4>
+			<p>Do you have an account?  If so, enter your credentials to the left.  If you don't yet have an account, click to <%= link_to "sign up", new_user_registration_path %> now.  It's easy, and free.</p>
+
+		</div>
+
+		<pre> Current Version :: alpha 0.1a </pre>
+
+
+	</div>
+
+
+</div>

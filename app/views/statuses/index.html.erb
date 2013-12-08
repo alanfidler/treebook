@@ -9,7 +9,10 @@
 <div class="panel panel-default">
 
   <div class="panel-heading">
-    <%= status.name %>
+     
+     <%= status.user.full_name %>
+
+     
   </div>
   <div class="panel-body">
     <p class="lead">
@@ -27,7 +30,7 @@
           <div class="btn-group">
             <button type="button" class="btn btn-default btn-xs"><%= link_to "Edit", edit_status_path(status) %></button>
 
-            <button type="button" class="btn btn-default btn-xs"><%= link_to "Delete", method: :delete, data: { confirm: "Sure?" } %></button>
+            <button type="button" class="btn btn-default btn-xs"><%= link_to "Delete", status, method: :delete %></button>
          
           
         </div>
